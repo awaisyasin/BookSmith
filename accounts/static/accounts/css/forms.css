@@ -1,0 +1,39 @@
+/* CSS styling */
+.login-form,
+.registration-form {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-form button[type="submit"],
+.registration-form button[type="submit"] {
+    background-color: #198754;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-form button[type="submit"]:hover,
+.registration-form button[type="submit"]:hover {
+    background-color: #196c45;
+}
+
+.btn.btn-secondary {
+    width: 100%;
+}

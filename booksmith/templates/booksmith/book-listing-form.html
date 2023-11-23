@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'booksmith/css/book-listing-form.css' %}">
+
+<div class="book-listing-form">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class="btn btn-primary">
+        <br><br>
+        <h4> Want to go back home?</h4>
+        <a href="{% url 'booksmith:home' %}" class="btn btn-secondary"> Go back</a>
+    </form>
+</div>
+{% endblock %}

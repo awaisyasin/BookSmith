@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title> Register</title>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'accounts/css/forms.css' %}">
+
+<div class="registration-form">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary"> Register</button>
+        <br><br>
+        <h4> Already have an account?</h4>
+        <a href="{% url 'accounts:login' %}" class="btn btn-secondary"> Login</a>
+
+    </form>
+</div>
+
+{% endblock %}

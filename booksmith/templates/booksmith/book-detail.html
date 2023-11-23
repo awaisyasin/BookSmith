@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'booksmith/css/book-detail.css' %}">
+
+<div class="d-flex justify-content-center">
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <div class="image-container">
+                    <img src="{{ book.cover_image.url }}" class="img-fluid rounded-start rounded-end"
+                        alt="{{ book.title }}">
+                </div>
+            </div>
+            <div class="col-md-8 d-flex flex-column">
+                <div class="card-body">
+                    <h5 class="card-title"> Title: {{ book.title }} <small> ({{ book.genre }})</small></h5>
+                    <p class="card-text">
+                    <p><h5> Description:</h5> {{ book.description }}</p>
+                    <p><b> Author:</b> {{ book.author }}</p>
+                    <p><b> Publisher:</b> {{ book.publisher }}</p>
+                    <p><b> Publication date:</b> {{ book.publication_date }}</p>
+                </div>
+                <div class="mt-auto">
+                    <a href="{% url 'booksmith:home' %}" class="btn btn-secondary">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
